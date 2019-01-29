@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run watch",
-    "upload": "git add .; git commit -am \"update\"; git push orign master;",
+    "upload": "git add .; git commit -am \"update\"; git push -f origin master;",
     "watch": "app=onchange npm run check; onchange '*' -- npm run upload",
     "check": "[ -z \"$(app=$app node -p 'try{url=process.env.app+\"/package.json\"; require(url).version}catch(e){exports=\"\"}')\" ] && npm i -D $app || echo \"already installed $app\"; "
   },
